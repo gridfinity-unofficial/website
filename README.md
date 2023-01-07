@@ -1,47 +1,45 @@
-### API
-
-``GET /api/v1/model``
-
-| Object Field | Type | Required? | Description                                                      |
-|--------------|------|-----------|------------------------------------------------------------------|
-| `limit`      | bool | no        | returns a list with models of `limit`                            |
-| `page`       | int  | no        | if limit is set there might be more pages with lenght of `limit` |
-
-Returns a json array with a list of all currently registered models
-
-
 List models
 ---------------------
 ### Request
   `GET /api/v1/model`
 
-#### Request Body
-  
-
-| Object Field       | Type    | Required? | Description                                                                                                       |
-|--------------------|---------|-----------|-------------------------------------------------------------------------------------------------------------------|
-| `limit`            | bool    | yes       | Name of the router group.                                                                                         |
-| `page`             | integer | yes       | Type of the router group e.g. `http` or `tcp`.                                                                    |
-
 ### Response
   Expected Status `200 OK`
 
 #### Response Body
-  A JSON list of all models
+  Returns a list of all currently registered models. Structure of a model in that list:
 
-| Object Field       | Type   | Description                                                                   |
-|--------------------|--------|-------------------------------------------------------------------------------|
-| `guid`             | string | GUID of the router group.                                                     |
-| `name`             | string | External facing port for the TCP route.                                       |
-| `type`             | string | Type of the router group e.g. `tcp`.                                          |
-| `reservable_ports` | string | Comma delimited list of reservable port or port ranges. (For `type` of `TCP`) |
+| Object Field  | Type   | Description                                      |
+|---------------|--------|--------------------------------------------------|
+| `id`          | string | md5 hash of (`name` + `url`)                     |
+| `name`        | string | The display name of the model                    |
+| `creator`     | string | The person who maid the model                    |
+| `license`     | string | What the model was licensed with                 |
+| `url`         | string | Direct link to model download page               |
+| `images`      | list   | List of some image urls of the model             |
+| `description` | string | Describes the given model                        |
+| `category`    | string | What category the model might be                 |
+| `grid_x`      | int    | Dimensions of the model in Gridfinity grid units |
+| `grid_y`      | int    | Dimensions of the model in Gridfinity grid units |
+
 
 #### Example Response:
 ```json
-{
-  "guid": "568c0232-e7c0-47ff-4c8a-bc89b49ade5b",
-  "name": "my-router-group",
-  "type": "http"
-  "reservable_ports": ""
-}
+[
+  {
+    "id": "b0f9e00ac6e6dc78d631b71c7658e8bd",
+    "name": "Gridfinity toilet paper holder",
+    "creator": "Mr. Toilet",
+    "license": "unimplemented",
+    "url": "https://example.url/model1",
+    "images": [
+      "https://example.url/image1",
+      "https://example.url/image2",
+      "https://example.url/image3"
+    ],
+    "description": "It´s a toilet paper holder.",
+    "grid_x": 4,
+    "grid_y": 2
+  }
+]
 ```
