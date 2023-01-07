@@ -13,6 +13,11 @@ def catalog():
     return open("static/catalog.html").read()
 
 
+@app.route("/specifications", methods=["GET"])
+def specifications():
+    return open("static/specifications.html").read()
+
+
 @app.route("/api/v1/model", methods=["GET", "POST"])
 def api_model():
     if request.method == "GET":
