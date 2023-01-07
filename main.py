@@ -8,6 +8,11 @@ def index():
     return open("static/index.html").read()
 
 
+@app.route("/catalog", methods=["GET"])
+def catalog():
+    return open("static/catalog.html").read()
+
+
 @app.route("/api/v1/model", methods=["GET", "POST"])
 def api_model():
     if request.method == "GET":
