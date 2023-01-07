@@ -110,55 +110,53 @@
     }
 
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "https://raw.githubusercontent.com/gridfinity-unofficial/data/main/models.json", false );
+    xmlHttp.open( "GET", "/api/v1/model", false );
     xmlHttp.send( null );
     const jsonData = JSON.parse(xmlHttp.responseText);
-
     document.getElementById("modelTable").innerHTML = "";
 
-    for (const key in jsonData){
-        if(jsonData.hasOwnProperty(key)){
-            console.log(`${jsonData[key]["image_url"]}`)
-            let new_image = document.createElement('td')
-            new_image.innerHTML = `<img src="${jsonData[key]["image_url"]}" style="max-width: 150px;" alt="${jsonData[key]["name"]}">`
-            new_image.style = "width: 20%";
+    for(let i = 0; i < jsonData.items.length; i++) {
+        let modelJsonData = jsonData.items[i];
 
-            let new_meta = document.createElement("td");
-            new_meta.style = "width: 60%";
-            new_meta.innerHTML = `
-                <table>
-                    <tr>
-                        <td><h5><a target="_blank" href="${jsonData[key]["url"]}"><b>${jsonData[key]["name"]}</b><i style="padding-left: 5px" class="bi bi-box-arrow-up-right"></i></a></h5></td>
-                    </tr>
-                    <tr>
-                        <td><h6>${jsonData[key]["creator"]}</h6></td>
-                    </tr>
-                    <tr>
-                        <td>${jsonData[key]["description"]}</td>
-                    </tr>
-                </table>`
+        let new_image = document.createElement('td')
+        new_image.innerHTML = `<img src="${modelJsonData["image_url"]}" style="max-width: 150px;" alt="${modelJsonData["name"]}">`
+        new_image.style = "width: 20%";
 
-            let new_grid = document.createElement("td");
-            new_grid.style = "width: 20%";
-            let new_table = document.createElement("table")
-            for (let i = 1; i <= jsonData[key]["grid_y"]; i++) {
-                let new_row = document.createElement("tr");
-                for (let i = 1; i <= jsonData[key]["grid_x"]; i++) {
-                    let new_col = document.createElement("td");
-                    new_col.innerHTML = `<img src="/static/media/grid-light.png" style="max-width: 30px;" alt="[X]">`
-                    new_row.appendChild(new_col)
-                }
-                new_table.appendChild(new_row)
+        let new_meta = document.createElement("td");
+        new_meta.style = "width: 60%";
+        new_meta.innerHTML = `
+            <table>
+                <tr>
+                    <td><h5><a target="_blank" href="${modelJsonData["url"]}"><b>${modelJsonData["name"]}</b><i style="padding-left: 5px" class="bi bi-box-arrow-up-right"></i></a></h5></td>
+                </tr>
+                <tr>
+                    <td><h6>${modelJsonData["creator"]}</h6></td>
+                </tr>
+                <tr>
+                    <td>${modelJsonData["description"]}</td>
+                </tr>
+            </table>`
+
+        let new_grid = document.createElement("td");
+        new_grid.style = "width: 20%";
+        let new_table = document.createElement("table")
+        for (let i = 1; i <= modelJsonData["grid_y"]; i++) {
+            let new_row = document.createElement("tr");
+            for (let i = 1; i <= modelJsonData["grid_x"]; i++) {
+                let new_col = document.createElement("td");
+                new_col.innerHTML = `<img src="/static/media/grid-light.png" style="max-width: 30px;" alt="[X]">`
+                new_row.appendChild(new_col)
             }
-            new_grid.appendChild(new_table)
-
-            let new_entry = document.createElement('tr');
-            new_entry.appendChild(new_image);
-            new_entry.appendChild(new_meta);
-            new_entry.appendChild(new_grid);
-
-            document.getElementById("modelTable").appendChild(new_entry);
+            new_table.appendChild(new_row)
         }
+        new_grid.appendChild(new_table)
+
+        let new_entry = document.createElement('tr');
+        new_entry.appendChild(new_image);
+        new_entry.appendChild(new_meta);
+        new_entry.appendChild(new_grid);
+
+        document.getElementById("modelTable").appendChild(new_entry);
     }
 </script>
 </body>
