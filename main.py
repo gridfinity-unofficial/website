@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, Response, request
 
 app = Flask(__name__)
 
@@ -10,12 +10,14 @@ def index():
 
 @app.route("/api/v1/model", methods=["GET", "POST"])
 def api_model():
-    pass
-
-
-@app.route("/api/v1/model/<model_id>", methods=["PUT", "DELETE"])
-def api_model_id(model_id: str):
-    print(model_id)
+    if request.method == "GET":
+        return Response(open("data.json").read(), status=200, mimetype="application/json")
+    elif request.method == "POST":
+        return Response('{"errors": [{"code": 403, "msg": "making model suggestions is not implemented yet"}]}', status=403, mimetype="application/json")
+    elif not request.method == "POST" or not request.method == "GET":
+        return Response('{"errors": [{"code": 501, "msg": "not POST and not GET are no allowed methods"}]}', status=501, mimetype="application/json")
+    else:
+        return Response('{"errors": [{"code": 500, "msg": "an internal server error occurred"}]}', status=500, mimetype="application/json")
 
 
 if __name__ == "__main__":
