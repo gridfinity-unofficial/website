@@ -16,7 +16,7 @@ List models
 | `creator`     | string | The person who maid the model                    |
 | `license`     | string | What the model was licensed with                 |
 | `url`         | string | Direct link to model download page               |
-| `images`      | list   | List of some image urls of the model             |
+| `image_url`   | string | URl to the model image                           |
 | `description` | string | Describes the given model                        |
 | `category`    | string | What category the model might be                 |
 | `grid_x`      | int    | Dimensions of the model in Gridfinity grid units |
@@ -32,11 +32,7 @@ List models
     "creator": "Mr. Toilet",
     "license": "unimplemented",
     "url": "https://example.url/model1",
-    "images": [
-      "https://example.url/image1",
-      "https://example.url/image2",
-      "https://example.url/image3"
-    ],
+    "image_url": "https://example.url/image1",
     "description": "It´s a toilet paper holder.",
     "grid_x": 4,
     "grid_y": 2
