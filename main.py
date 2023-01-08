@@ -21,7 +21,7 @@ def specifications():
 @app.route("/api/v1/model", methods=["GET", "POST"])
 def api_model():
     if request.method == "GET":
-        return Response(open("data.json").read(), status=200, mimetype="application/json")
+        return Response(open("data/model.json").read(), status=200, mimetype="application/json")
     elif request.method == "POST":
         return Response('{"errors": [{"code": 403, "msg": "making model suggestions is not implemented yet"}]}', status=403, mimetype="application/json")
     elif not request.method == "POST" or not request.method == "GET":
