@@ -1,0 +1,43 @@
+{
+  "sections": [
+    {
+      "name": "Printing tips",
+      "faqs": [
+        {
+          "question": "How to cur down on printing time?",
+          "answer": "If possible, use a bigger nozzle such as 0.6 because many parts of gridfinity are not too intricate and therefore allow for a bigger nozzle. Additionally, many maker spaces have 3D printers, which you could use to parallelize tasks."
+        }
+      ]
+    },
+    {
+      "name": "Assembly tips",
+      "faqs": [
+        {
+          "question": "What size labels should I use?",
+          "answer": "12mm tape will fit, but it's tight. 9mm is ideal"
+        },
+        {
+          "question": "How should I secure the baseplate to the bottom of a drawer?",
+          "answer": "Just about anything will work: CA adhesive, VHB tape, sticky putty, etc. If you don't want to make anything sticky, you can also pad out the remaining space in your drawer so the grid doesn't slide around."
+        },
+        {
+          "question": "",
+          "answer": ""
+        },
+        {
+          "question": "Where to buy non-printable parts (affiliate links supporting Zack)",
+          "answer": "\n    1x3\" Microscope slides: https://amzn.to/3O6qjBO\n    2mm Repair Tape: https://amzn.to/3M1D9zF\n    M3 Screws: https://amzn.to/37IaXTg\n    6x2mm Magnets: https://amzn.to/37Ihopq\n    Rubber Feet: https://amzn.to/3LZv4v5\n    Metal Tire Weights: https://amzn.to/3uAzH9f\n"
+        }
+      ]
+    },
+    {
+      "name": "Supporting",
+      "faqs": [
+        {
+          "question": "How to support Gridfinity?",
+          "answer": "Be a Patreon of Zack, Contribute to this site at , <a href='https://github.com/gridfinity-unofficial/website' target='_blank'>GitHub</a>"
+        }
+      ]
+    }
+  ]
+}
