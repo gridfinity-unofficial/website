@@ -115,8 +115,8 @@
     const jsonData = JSON.parse(xmlHttp.responseText);
     document.getElementById("modelTable").innerHTML = "";
 
-    for(let i = 0; i < jsonData.items.length; i++) {
-        let modelJsonData = jsonData.items[i];
+    for(let i = 0; i < jsonData.model.length; i++) {
+        let modelJsonData = jsonData.model[i];
 
         let new_image = document.createElement('td')
         new_image.innerHTML = `<img src="${modelJsonData["image_url"]}" style="max-width: 150px;" alt="${modelJsonData["name"]}">`
