@@ -18,6 +18,23 @@ def specifications():
     return open("static/specifications.html").read()
 
 
+@app.route("/faq", methods=["GET"])
+def faq():
+    return open("static/faq.html").read()
+
+
+@app.route("/api/v1/faq", methods=["GET", "POST"])
+def api_faq():
+    if request.method == "GET":
+        return Response(open("data/faq.json").read(), status=200, mimetype="application/json")
+    elif request.method == "POST":
+        return Response('{"errors": [{"code": 403, "msg": "asking questions is not implemented yet"}]}', status=403, mimetype="application/json")
+    elif not request.method == "POST" or not request.method == "GET":
+        return Response('{"errors": [{"code": 501, "msg": "not POST and not GET are no allowed methods"}]}', status=501, mimetype="application/json")
+    else:
+        return Response('{"errors": [{"code": 500, "msg": "an internal server error occurred"}]}', status=500, mimetype="application/json")
+
+
 @app.route("/api/v1/model", methods=["GET", "POST"])
 def api_model():
     if request.method == "GET":

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gridfinity - Unofficial wiki</title>
+  <link rel="icon" type="image/x-icon" href="https://gridfinity.xyz/assets/svg/gf_logo_without_label.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="https://gridfinity.xyz/assets/svg/gf_logo_without_label.svg" alt="Logo" height="30" class="d-inline-block align-text-top">
+      <b>Gridfinity</b>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/catalog">catalog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/specifications">technical specifications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/faq">FAQ</a>
+        </li>
+      </ul>
+    </div>
+    <a href="https://github.com/gridfinity-unofficial/website" style="padding-right: 15px; color: var(--bs-navbar-active-color)">contribute on GitHub <i style="padding-left: 5px" class="bi bi-github"></i></a>
+    <div class="btn-group dropstart">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Theme
+      </button>
+      <ul class="dropdown-menu">
+        <li><a onclick="switchLight()" class="dropdown-item" href="?theme=light"><i style="padding-right: 5px" class="bi bi-sun-fill"></i>Light</a></li>
+        <li><a onclick="switchDark()" class="dropdown-item" href="?theme=dark"><i style="padding-right: 5px" class="bi bi-sun"></i>Dark</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="max-width: 640px">
+  <h2><b>FAQs</b></h2>
+
+  <div id="faq_container">
+    <h4><p class="placeholder-wave"><span class="placeholder col-4"></span></p></h4>
+
+    <div class="card">
+      <a class="card-header" style="text-decoration: none" data-bs-toggle="collapse" href="#placeholder-one" aria-expanded="false" aria-controls="placeholder-one">
+        <h5><p class="placeholder-wave"><span class="placeholder col-6"></span></p></h5>
+      </a>
+      <div class="card-body collapse" id="placeholder-one">
+        <p class="placeholder-wave"><span class="placeholder col-12"></span></p>
+        <p class="placeholder-wave"><span class="placeholder col-12"></span></p>
+        <p class="placeholder-wave"><span class="placeholder col-5"></span></p>
+      </div>
+    </div>
+    <div style="height: 10px; width: 100%;"></div>
+    <div class="card">
+      <a class="card-header" style="text-decoration: none" data-bs-toggle="collapse" href="#placeholder-two" aria-expanded="false" aria-controls="placeholder-two">
+        <h5><p class="placeholder-wave"><span class="placeholder col-6"></span></p></h5>
+      </a>
+      <div class="card-body collapse" id="placeholder-two">
+        <p class="placeholder-wave"><span class="placeholder col-12"></span></p>
+        <p class="placeholder-wave"><span class="placeholder col-12"></span></p>
+        <p class="placeholder-wave"><span class="placeholder col-5"></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  const urlParams = new URLSearchParams(window.location.search);
+  const theme = urlParams.get('theme');
+  if (theme === "light"){
+    document.body.setAttribute("data-bs-theme", "light");
+  }if (theme === "dark"){
+    document.body.setAttribute("data-bs-theme", "dark");
+  }
+
+  function switchLight(){
+    document.body.setAttribute("data-bs-theme", "light");
+  }
+  function switchDark(){
+    document.body.setAttribute("data-bs-theme", "dark");
+  }
+</script>
+
+<script type="text/javascript">
+  let xmlHttp = new XMLHttpRequest();
+  xmlHttp.onreadystatechange = function() {
+    if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+      const faq_data = JSON.parse(xmlHttp.responseText)
+      const faq_container = document.getElementById("faq_container")
+
+      faq_container.innerHTML = "";
+
+      for (let i = 0; i < faq_data.sections.length; i++) {
+        let new_title = document.createElement("h4");
+        new_title.style = "padding-top: 15px;"
+        new_title.innerHTML = faq_data.sections[i].name
+        faq_container.appendChild(new_title)
+
+        for (let a = 0; a < faq_data.sections[i].faqs.length; a++) {
+          let new_faq = document.createElement("div");
+          new_faq.classList.add("card");
+
+          new_faq.innerHTML = `
+    <a class="card-header" style="text-decoration: none" data-bs-toggle="collapse" href="#${faq_data.sections[i].faqs[a].id}" aria-expanded="false" aria-controls="${faq_data.sections[i].faqs[a].id}">
+      <h5>${faq_data.sections[i].faqs[a].question}</h5>
+    </a>
+    <div class="card-body collapse" id="${faq_data.sections[i].faqs[a].id}">
+      ${faq_data.sections[i].faqs[a].answer}
+    </div>`
+
+          let new_gap = document.createElement("div");
+          new_gap.style = "height: 10px; width: 100%;"
+
+          faq_container.appendChild(new_gap)
+          faq_container.appendChild(new_faq)
+        }
+      }
+    }
+  }
+  xmlHttp.open("GET", "/api/v1/faq", true); // true for asynchronous
+  xmlHttp.send(null);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

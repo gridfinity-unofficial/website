@@ -4,7 +4,8 @@
       "name": "Printing tips",
       "faqs": [
         {
-          "question": "How to cur down on printing time?",
+          "id": 1001,
+          "question": "How to cut down on printing time?",
           "answer": "If possible, use a bigger nozzle such as 0.6 because many parts of gridfinity are not too intricate and therefore allow for a bigger nozzle. Additionally, many maker spaces have 3D printers, which you could use to parallelize tasks."
         }
       ]
@@ -13,20 +14,24 @@
       "name": "Assembly tips",
       "faqs": [
         {
+          "id": 1002,
           "question": "What size labels should I use?",
           "answer": "12mm tape will fit, but it's tight. 9mm is ideal"
         },
         {
+          "id": 1003,
           "question": "How should I secure the baseplate to the bottom of a drawer?",
           "answer": "Just about anything will work: CA adhesive, VHB tape, sticky putty, etc. If you don't want to make anything sticky, you can also pad out the remaining space in your drawer so the grid doesn't slide around."
         },
         {
-          "question": "",
-          "answer": ""
+          "id": 1004,
+          "question": "How should magnets be attached to the bins or the baseplat?",
+          "answer": "CA adhesive, superglue, and hot-glue all work well! Just remember that magnets are polarized so you need to be consistent with orientation. "
         },
         {
+          "id": 1005,
           "question": "Where to buy non-printable parts (affiliate links supporting Zack)",
-          "answer": "\n    1x3\" Microscope slides: https://amzn.to/3O6qjBO\n    2mm Repair Tape: https://amzn.to/3M1D9zF\n    M3 Screws: https://amzn.to/37IaXTg\n    6x2mm Magnets: https://amzn.to/37Ihopq\n    Rubber Feet: https://amzn.to/3LZv4v5\n    Metal Tire Weights: https://amzn.to/3uAzH9f\n"
+          "answer": "1x3\" Microscope slides: <a href=\"https://amzn.to/3O6qjBO\" target=\"_blank\">https://amzn.to/3O6qjBO</a> <br> 2mm Repair Tape: <a href=\"https://amzn.to/3M1D9zF\" target=\"_blank\">https://amzn.to/3M1D9zF</a> <br> M3 Screws: <a href=\"https://amzn.to/37IaXTg\" target=\"_blank\">https://amzn.to/37IaXTg</a> <br> 6x2mm Magnets: <a href=\"https://amzn.to/37Ihopq\" target=\"_blank\">https://amzn.to/37Ihopq</a> <br> Rubber Feet: <a href=\"https://amzn.to/3LZv4v5\" target=\"_blank\">https://amzn.to/3LZv4v5</a> <br> Metal Tire Weights: <a href=\"https://amzn.to/3uAzH9f\" target=\"_blank\">https://amzn.to/3uAzH9f</a>"
         }
       ]
     },
@@ -34,6 +39,7 @@
       "name": "Supporting",
       "faqs": [
         {
+          "id": 1006,
           "question": "How to support Gridfinity?",
           "answer": "Be a Patreon of Zack, Contribute to this site at , <a href='https://github.com/gridfinity-unofficial/website' target='_blank'>GitHub</a>"
         }
