@@ -73,23 +73,8 @@
   </div>
 </div>
 
-<script type="text/javascript">
-  const urlParams = new URLSearchParams(window.location.search);
-  const theme = urlParams.get('theme');
-  if (theme === "light"){
-    document.body.setAttribute("data-bs-theme", "light");
-  }if (theme === "dark"){
-    document.body.setAttribute("data-bs-theme", "dark");
-  }
 
-  function switchLight(){
-    document.body.setAttribute("data-bs-theme", "light");
-  }
-  function switchDark(){
-    document.body.setAttribute("data-bs-theme", "dark");
-  }
-</script>
-
+<script src="/scripts/theme"></script>
 <script type="text/javascript">
   let xmlHttp = new XMLHttpRequest();
   xmlHttp.onreadystatechange = function() {

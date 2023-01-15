@@ -1,4 +1,5 @@
 from flask import Flask, Response, request
+from os import listdir
 
 app = Flask(__name__)
 
@@ -45,6 +46,14 @@ def api_model():
         return Response('{"errors": [{"code": 501, "msg": "not POST and not GET are no allowed methods"}]}', status=501, mimetype="application/json")
     else:
         return Response('{"errors": [{"code": 500, "msg": "an internal server error occurred"}]}', status=500, mimetype="application/json")
+
+
+@app.route("/scripts/<script>", methods=["GET"])
+def scripts(script):
+    if script == "theme":
+        return Response(open("static/scripts/theme.js"), status=200, mimetype="text/javascript")
+    else:
+        return Response(str({"errors": [{"code": 404, "msg": f"{script} is no valid script"}]}), status=404, mimetype="application/json")
 
 
 if __name__ == "__main__":
