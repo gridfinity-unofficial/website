@@ -1,0 +1,148 @@
+{
+  "model": [
+    {
+      "id": "fd3f0d2ed2efe4446a99512b8f3decd5",
+      "name": "Zack Freedfinity - Gridfinity in Zack's Head",
+      "creator": "Zack Freedman",
+      "license": null,
+      "url": "https://thangs.com/designer/ZackFreedman/3d-model/Zack%20Freedfinity%20-%20Gridfinity%20in%20Zack's%20Head-534483",
+      "image_url": "https://storage.googleapis.com/thangs-thumbnails/production/dd3e48f1-df15-47d5-bc77-a40a9c037fd4/Headfinity_Lower.png",
+      "description": "Gridfinity began in my head, and it's time to shove it back in. This 3/4 scale stylized scan of my noggin is sized for a Prusa i3 Mk3S+ or other 200mm³ printer, and gives you a whole 2x2x6 units of storage! Whoa nelly!",
+      "category": "baseplate",
+      "grid_x": 2,
+      "grid_y": 2
+    },
+    {
+      "id": "fc3bd544fda68b6f7acfb9e333462e1f",
+      "name": "MagSafe Phone Dock",
+      "creator": "Zack Freedman",
+      "license": null,
+      "url": "https://thangs.com/designer/ZackFreedman/3d-model/MagSafe%20Phone%20Dock.stl-534482",
+      "image_url": "https://storage.googleapis.com/thangs-thumbnails/production/d74148b8-3574-44eb-94ac-55efdb6e6b08/MagSafe_Phone_Dock.png",
+      "description": "Keep an eye on your VERY important notifications while topping up your battery! This phone charger fits the Gridfinity modular storage system, and is designed to hold <a href='https://www.amazon.com/dp/B09HBFNQBR?psc=1&ref=ppx_yo2ov_dt_b_product_details' target='_blank'>particularly powerful Qi wireless charger</a>. I designed it for my iPhone 14, but it should fit nearly any phone, even in an EXTRA THICC case.",
+      "category": "holder",
+      "grid_x": 2,
+      "grid_y": 2
+    },
+    {
+      "id": "d7be2c8f81d1f82b1b6566d33d9ada7b",
+      "name": "Gridfinity Miniware DT71 Charger and Dock",
+      "creator": "Zack Freedman",
+      "license": null,
+      "url": "https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20Miniware%20DT71%20Charger%20and%20Dock-534481",
+      "image_url": "https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fthangs-thumbnails%2Fproduction%2F4f44344b-8cf1-4c5b-a0ed-6535eba5ac6a%2FMiniware_DT71_Holder.png&w=384&q=75",
+      "description": "The Miniware DT71 is a full-featured multimeter in a pair of tweezers. Problem: You have to disassemble it to charge it, and it doesn't stand upright in a 42mm³ grid.\n\nRestore order to the Universe with this handy dock. It holds the DT71 assembled or stripped, as well as spare probes. The USB adapter is positioned to use while docked, or stashed safely, with the USB port exposed for charging.",
+      "category": "holder",
+      "grid_x": 1,
+      "grid_y": 1
+    },
+    {
+      "id": "f0f6d03ac190be98b250ee760d8db151",
+      "name": "Gridfinity SD Card Rolodex Mod",
+      "creator": "Zack Freedman",
+      "license": null,
+      "url": "https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20SD%20Card%20Rolodex%20Mod-534475",
+      "image_url": "https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fthangs-thumbnails%2Fproduction%2Ff6e96150-4c04-4654-ab8a-5e0d5d9652cf%2FSD_Card_Rolodex_Bottom.png&w=384&q=75",
+      "description": "Upgrade the <a href='http://bit.ly/3H576PQ' target='_blank'>SD Card Holder Rolodex by Tetralite</a> for Gridfinity! Print Tetralite's model as normal, but print this instead of their framebase.stl. Extends a bit beyond the grid, but works great!",
+      "category": "mod",
+      "grid_x": 3,
+      "grid_y": 2
+    },
+    {
+      "id": "3cbb602c426ba9e9dbafc095022b8318",
+      "name": "Gridfinity Pinecil and TS100 Super Stand!",
+      "creator": "Zack Freedman",
+      "license": null,
+      "url": "https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20Pinecil%20and%20TS100%20Super%20Stand!-534477",
+      "image_url": "https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fthangs-thumbnails%2Fproduction%2Fdacb80a5-7b4c-4900-88df-a6221d3afd07%2FPinecil_Super_Stand_Main_Unit.png&w=384&q=75",
+      "description": "The ultimate dock for my favorite soldering iron, the Pinecil! Also works on the Miniware TS100 and any iron that uses TS100 tips.",
+      "category": "holder",
+      "grid_x": 4,
+      "grid_y": 1
+    },
+    {
+      "id": "8c665e31f683cfa00e9d74d7d0b6a443",
+      "name": "Gridfinity Hakko 599B Holder",
+      "creator": "Zack Freedman",
+      "license": null,
+      "url": "https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20Hakko%20599B%20Holder-534480",
+      "image_url": "https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fthangs-thumbnails%2Fproduction%2F11107735-1241-4c7b-97aa-04fa10f02365%2FHakko_599B_Holder.png&w=384&q=75",
+      "description": "The perfect way to stash the sturdy and inexpensive Hakko 599B brass tip cleaner on your favorite Gridfinity baseplate. Combine with a soldering stand and wire dispenser for a full soldering station!",
+      "category": "holder",
+      "grid_x": 2,
+      "grid_y": 2
+    },
+    {
+      "id": "c1d33de5f337fb1955d12f19523a4600",
+      "name": "Gridfinity Pinecil + TS100 Tips and Tool Holder",
+      "creator": "Zack Freedman",
+      "license": null,
+      "url": "https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20Pinecil%20%2B%20TS100%20Tips%20and%20Tool%20Holder-201815",
+      "image_url": "https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fthangs-thumbnails%2Fproduction%2F48026222-232d-4804-acda-26e5bdc29b1e%2FPinecil_Extra_Tips_w_Magnet.png&w=384&q=75",
+      "description": "Store your spare soldering tips, screwdriver, and screws!",
+      "category": "holder",
+      "grid_x": 1,
+      "grid_y": 1
+    },
+    {
+      "id": "7fb838851807208c15aeda4cbf4d5159",
+      "name": "Gridfinity Adjustable Jumper Wire Comb",
+      "creator": "Zack Freedman",
+      "license": null,
+      "url": "https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20Adjustable%20Jumper%20Wire%20Comb-174402",
+      "image_url": "https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fthangs-thumbnails%2Fproduction%2F789c5ba2-63be-4899-9c10-eb1df51a8115%2FAdjustable_Jumper_Rack_Comb.png&w=384&q=75",
+      "description": "Print a pair of bases and at least two combs, shove the combs in the slots, stretch the jumpers, and you're gucci. You can put multiple combs on the same base to hold multiple sizes! Wowzers!",
+      "category": "holder",
+      "grid_x": 0,
+      "grid_y": 0
+    },
+    {
+      "id": "109fb2b80fa6f0b52a7964cf924b9f52",
+      "name": "Gridfinity Mintion Beagle Cam Mount",
+      "creator": "Zack Freedman",
+      "license": null,
+      "url": "https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20Mintion%20Beagle%20Cam%20Mount-174265",
+      "image_url": "https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fthangs-thumbnails%2Fproduction%2F0f068199-de7a-4b0b-af8e-7f7ce58b0dd3%2FBeagle_Cam_Holder_Base.png&w=384&q=75",
+      "description": "Add the easiest way to make 3D printing time lapses to the bestest storage system. Works great with printer mount baseplates!",
+      "category": "mount",
+      "grid_x": 2,
+      "grid_y": 2
+    },
+    {
+      "id": "d5613b4eb1bf16730aed53923aa271ea",
+      "name": "Gridfinity Caliper Holder",
+      "creator": "Zack Freedman",
+      "license": null,
+      "url": "https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20Caliper%20Holder-62216",
+      "image_url": "https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-thangs-public%2Fuploads%2Fattachments%2F6b9a7d98-60dc-45c3-a1ed-d74fff76d83a%2F20220809_141143.jpg&w=384&q=75",
+      "description": "Stash your measuring bois on your Gridfinity modular workshop storage system, Excalibur style.",
+      "category": "holder",
+      "grid_x": 2,
+      "grid_y": 1
+    },
+    {
+      "id": "7656c3aa1a6cd71fcff943f99e942c24",
+      "name": "Gridfinity Nippers + Strippers + Pliers Racks",
+      "creator": "Zack Freedman",
+      "license": null,
+      "url": "https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20Nippers%20%2B%20Strippers%20%2B%20Pliers%20Racks-61120",
+      "image_url": "https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-thangs-public%2Fuploads%2Fattachments%2Fd1d64c22-9807-4bff-bcc0-70abe98a0197%2FImage%2520from%2520iOS.jpg&w=384&q=75",
+      "description": "Safely grab the right tool with the Gridfinity modular workshop storage system!",
+      "category": "holder",
+      "grid_x": 4,
+      "grid_y": 2
+    },
+    {
+      "id": "105db2ac698147bc173931e58661eae6",
+      "name": "Gridfinity Window Divider Bins with Top Loading Glass and Top",
+      "creator": "thenicnet",
+      "license": null,
+      "url": "https://www.printables.com/model/360961-gridfinity-window-divider-bins-with-top-loading-gl",
+      "image_url": "https://media.printables.com/media/prints/360961/images/3058202_a87b93bf-39b8-44d3-ae44-cd4b701f809c/thumbs/cover/320x240/jpg/20230106_204927.webp",
+      "description": "I really love the entire Gridfinity system by ZackFreedman and I've been dying to try these organizers with the built in windows. When I finally did, the OG design didn't work for me. I didn't want to use double stick tape. The glass mounting didn't really seem all that secure to me. I checked remixes and found a few that tried making some changes, but I still wasn't in love. So to FUSION 360 we go.",
+      "category": "tray",
+      "grid_x": 2,
+      "grid_y": 1
+    }
+  ]
+}

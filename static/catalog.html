@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gridfinity - catalog</title>
+    <link rel="icon" type="image/x-icon" href="https://gridfinity.xyz/assets/svg/gf_logo_without_label.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="https://gridfinity.xyz/assets/svg/gf_logo_without_label.svg" alt="Logo" height="30" class="d-inline-block align-text-top">
+            <b>Gridfinity</b>
+        </a>
+        <a href="https://github.com/gridfinity-unofficial/website" style="padding-right: 15px; color: var(--bs-navbar-active-color)">contribute on GitHub <i style="padding-left: 5px" class="bi bi-github"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/catalog">catalog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/specifications">technical specifications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/faq">FAQ</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Theme
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="switchLight()" class="dropdown-item" href="?theme=light"><i style="padding-right: 5px" class="bi bi-sun-fill"></i>Light</a></li>
+                        <li><a onclick="switchDark()" class="dropdown-item" href="?theme=dark"><i style="padding-right: 5px" class="bi bi-sun"></i>Dark</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container" style="padding-top: 20px">
+    <table class="table table-striped table-hover">
+        <tbody id="modelTable">
+        <tr class="placeholder-wave">
+            <td style="width: 20%">
+                <span class="placeholder col-10" style="height: 150px"></span>
+            </td>
+            <td style="width: 60%">
+                <span class="placeholder col-10"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
+            </td>
+            <td style="width: 20%">
+                <span class="placeholder col-10" style="height: 150px"></span>
+            </td>
+        </tr>
+        <tr class="placeholder-wave">
+            <td style="width: 20%">
+                <span class="placeholder col-10" style="height: 150px"></span>
+            </td>
+            <td style="width: 20%">
+                <span class="placeholder col-10"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
+            </td>
+            <td style="width: 60%">
+                <span class="placeholder col-10" style="height: 150px"></span>
+            </td>
+        </tr>
+        <tr class="placeholder-wave">
+            <td style="width: 20%">
+                <span class="placeholder col-10" style="height: 150px"></span>
+            </td>
+            <td style="width: 60%">
+                <span class="placeholder col-10"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
+            </td>
+            <td style="width: 20%">
+                <span class="placeholder col-10" style="height: 150px"></span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="/scripts/theme"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", "/api/v1/model", false );
+    xmlHttp.send( null );
+    const jsonData = JSON.parse(xmlHttp.responseText);
+    document.getElementById("modelTable").innerHTML = "";
+
+    for(let i = 0; i < jsonData.model.length; i++) {
+        let modelJsonData = jsonData.model[i];
+
+        let new_image = document.createElement('td')
+        new_image.innerHTML = `<img src="${modelJsonData["image_url"]}" style="max-width: 150px;" alt="${modelJsonData["name"]}">`
+        new_image.style = "width: 20%";
+
+        let new_meta = document.createElement("td");
+        new_meta.style = "width: 60%";
+        new_meta.innerHTML = `
+            <table>
+                <tr>
+                    <td><h5><a target="_blank" href="${modelJsonData["url"]}"><b>${modelJsonData["name"]}</b><i style="padding-left: 5px" class="bi bi-box-arrow-up-right"></i></a></h5></td>
+                </tr>
+                <tr>
+                    <td><h6>${modelJsonData["creator"]}</h6></td>
+                </tr>
+                <tr>
+                    <td>${modelJsonData["description"]}</td>
+                </tr>
+            </table>`
+
+        let new_grid = document.createElement("td");
+        new_grid.style = "width: 20%";
+        let new_table = document.createElement("table")
+        for (let i = 1; i <= modelJsonData["grid_y"]; i++) {
+            let new_row = document.createElement("tr");
+            for (let i = 1; i <= modelJsonData["grid_x"]; i++) {
+                let new_col = document.createElement("td");
+                new_col.innerHTML = `<img src="/static/media/grid-light.png" style="max-width: 30px;" alt="[X]">`
+                new_row.appendChild(new_col)
+            }
+            new_table.appendChild(new_row)
+        }
+        new_grid.appendChild(new_table)
+
+        let new_entry = document.createElement('tr');
+        new_entry.appendChild(new_image);
+        new_entry.appendChild(new_meta);
+        new_entry.appendChild(new_grid);
+
+        document.getElementById("modelTable").appendChild(new_entry);
+    }
+</script>
+</body>
+</html>
